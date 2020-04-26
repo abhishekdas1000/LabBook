@@ -4,13 +4,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.cg.iter.databaseutil.DBUtil;
 import com.cg.iter.entity.AuthorEntity;
 
 public class AuthorDAOImpl implements AuthorDAO{
 
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
-	EntityManager manager = factory.createEntityManager();
+	//EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
+	//EntityManager manager = factory.createEntityManager();
+	DBUtil con;
+	EntityManager manager;
 	
+	public AuthorDAOImpl() {
+		con= new DBUtil();
+		manager=con.getManager();
+	}
 	//method for adding an author
 	@Override
 	public boolean addAuthor(AuthorEntity author) {
