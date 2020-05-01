@@ -1,4 +1,4 @@
-package com.cg.iter.entitie;
+package main.java.com.cg.iter.entitie;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
